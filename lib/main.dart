@@ -1,6 +1,8 @@
-import 'package:belajar_flutter/pendidikanScreen.dart';
-import 'package:belajar_flutter/screenSecond.dart';
+import 'package:belajar_flutter/screenDarkMode.dart';
+import 'package:belajar_flutter/screenSekolah.dart';
+import 'package:belajar_flutter/secondPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,17 +14,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: MyHomePage(),
       initialRoute: '/',
       routes: {
-        '/screen-second': (context) => ScreenSecondPage(),
-        '/screen-pendidikan': (context) => ScreenPendidikan(),
+        '/second-screen': (context) => Secondpage(),
       },
     );
   }
@@ -41,24 +42,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Introduction Page"),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Text("Pengenalan Diri"),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ScreenSecondPage()));
-                },
-                child: Text("Next Page"))
-          ],
+        appBar: AppBar(
+          title: Text("Introduction Page"),
         ),
-      ),
-    );
+        body: Column(children: [
+          Center(
+              child: Column(
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Get.to(Secondpage());
+                  },
+                  child: Icon(Icons.navigate_next_rounded)),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.to(DarkModePage());
+                  },
+                  child: Icon(Icons.dark_mode_rounded)),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.to(Screensekolah());
+                  },
+                  child: Icon(Icons.person)),
+            ],
+          ))
+        ]));
   }
 }
