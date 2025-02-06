@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367858166859",
+    "project_id": "absensi-siswa-univ-121e3",
+    "storage_bucket": "absensi-siswa-univ-121e3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367858166859:android:16da9a2a04117152faf1ce",
+        "android_client_info": {
+          "package_name": "com.example.belajar_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcUAKsP3wf9ViLsHHBoHL_GNsKFJx1tY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
